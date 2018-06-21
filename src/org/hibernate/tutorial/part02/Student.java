@@ -2,6 +2,8 @@ package org.hibernate.tutorial.part02;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,6 +13,7 @@ public class Student {
 
 	@Id // PK for the class
 	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private String firstName;
