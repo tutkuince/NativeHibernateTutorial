@@ -22,10 +22,18 @@ public class HibernateUtil {
 
 			// Hibernate settings equivalent to hibernate.cfg.xml's properties
 			Map<String, String> settings = new HashMap<>();
+			
+			// JDBC Database connection settings
 			settings.put(Environment.URL, "jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false");
 			settings.put(Environment.USER, "root");
 			settings.put(Environment.PASS, "123456.");
-			settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
+			
+			settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect"); // Select our SQL dialect
+			settings.put(Environment.POOL_SIZE, "1"); // JDBC connection pool settings
+			
+			settings.put(Environment.SHOW_SQL, "true");	// Echo the SQL stdout
+			
+			settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");	// Set the current session context
 
 			// Apply settings
 			registryBuilder.applySettings(settings);
@@ -37,7 +45,7 @@ public class HibernateUtil {
 			MetadataSources metadataSources = new MetadataSources(registry);
 
 			// Create MetaData
-			Metadata metaData = metadataSources.getMetadataBuilder().build();
+			Metadata metaData = metadataSources.buildMetadata();
 
 			// Create SessionFactory
 			sessionFactory = metaData.buildSessionFactory();
