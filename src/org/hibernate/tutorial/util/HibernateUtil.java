@@ -13,7 +13,7 @@ import org.hibernate.tutorial.part03.onetomany.Course;
 //import org.hibernate.tutorial.part02.Student;
 //import org.hibernate.tutorial.part03.onetoone.Instructor;
 import org.hibernate.tutorial.part03.onetomany.Instructor;
-import org.hibernate.tutorial.part03.onetoone.InstructorDetail;
+//import org.hibernate.tutorial.part03.onetoone.InstructorDetail;
 
 public class HibernateUtil {
 	private static StandardServiceRegistry registry;
