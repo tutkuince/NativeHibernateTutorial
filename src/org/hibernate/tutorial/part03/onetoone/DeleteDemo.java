@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.tutorial.util.HibernateUtil;
 
-public class MainAppOTO {
+public class DeleteDemo {
 	public static void main(String[] args) {
 		// Create SessionFactory
 		SessionFactory factory = HibernateUtil.getSessionFactory();
