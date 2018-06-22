@@ -39,7 +39,7 @@ public class HibernateUtil {
 			settings.put(Environment.SHOW_SQL, "true"); // Echo the SQL stdout
 
 			settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread"); // Set the current session context
-			settings.put(Environment.HBM2DDL_AUTO, "create");
+			settings.put(Environment.HBM2DDL_AUTO, "update");
 
 			// Apply settings
 			registryBuilder.applySettings(settings);
