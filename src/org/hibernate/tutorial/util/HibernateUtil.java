@@ -9,8 +9,10 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
+import org.hibernate.tutorial.part03.onetomany.Course;
 //import org.hibernate.tutorial.part02.Student;
-import org.hibernate.tutorial.part03.onetoone.Instructor;
+//import org.hibernate.tutorial.part03.onetoone.Instructor;
+import org.hibernate.tutorial.part03.onetomany.Instructor;
 import org.hibernate.tutorial.part03.onetoone.InstructorDetail;
 
 public class HibernateUtil {
@@ -37,7 +39,7 @@ public class HibernateUtil {
 			settings.put(Environment.SHOW_SQL, "true"); // Echo the SQL stdout
 
 			settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread"); // Set the current session context
-			settings.put(Environment.HBM2DDL_AUTO, "update");
+			settings.put(Environment.HBM2DDL_AUTO, "create");
 
 			// Apply settings
 			registryBuilder.applySettings(settings);
@@ -46,10 +48,8 @@ public class HibernateUtil {
 			registry = registryBuilder.build();
 
 			// Create MetadataSources
-			MetadataSources metadataSources = new MetadataSources(registry)
-					.addAnnotatedClass(Instructor.class)
-					.addAnnotatedClass(InstructorDetail.class);
-
+			MetadataSources metadataSources = new MetadataSources(registry).addAnnotatedClass(Instructor.class)
+					.addAnnotatedClass(Course.class);
 			// Create MetaData
 			Metadata metaData = metadataSources.buildMetadata();
 
