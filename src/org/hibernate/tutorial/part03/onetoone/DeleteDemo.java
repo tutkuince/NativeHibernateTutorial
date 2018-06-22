@@ -12,27 +12,22 @@ public class DeleteDemo {
 		// Create Session
 		Session session = factory.getCurrentSession();
 
-		// Create the objects
-		Instructor instructor = new Instructor("Tutku", "Ince", "incetutku@gmail.com");
-
-		InstructorDetail instructorDetail = new InstructorDetail("http://www.muditasoft.com", "Love to code!");
-		
-		Instructor instructor2 = new Instructor("Emin", "Koklu", "kasaremin@gmail.com");
-
-		InstructorDetail instructorDetail2 = new InstructorDetail("http://www.gramgames.com", "Love to attack!");
-		
-		// Associate the objects
-		instructor.setInstructorDetail(instructorDetail);
-		instructor2.setInstructorDetail(instructorDetail2);
-		
 		// Start a transaction
 		session.beginTransaction();
 		
-		// Save the instructor
-		// Note: this will ALSO save the "details" object because of "CascadeType.ALL"
-		System.out.println("Saving instructor: " + instructor);
-		session.save(instructor);
-		session.save(instructor2);
+		// get instructor by primary key / id
+		int theId = 2;
+		Instructor instructor = session.get(Instructor.class, theId);
+		
+		System.out.println("Found instructor: " + instructor);
+		
+		// Delete the instructor
+		if(instructor != null) {
+			System.out.println("Deleting: " + instructor);
+			
+			// Note: will ALSO delete associated "details" object because of CascadeType.ALL
+			session.delete(instructor);
+		}
 		
 		// Commit transaction
 		session.getTransaction().commit();
