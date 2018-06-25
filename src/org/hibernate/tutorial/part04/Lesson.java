@@ -22,7 +22,7 @@ public class Lesson {
 	@Column(name = "title")
 	private String title;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
 			CascadeType.PERSIST, CascadeType.REFRESH })
 	@JoinColumn(name = "teacher_id")
 	private Teacher teacher;

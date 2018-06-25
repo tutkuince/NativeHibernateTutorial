@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.tutorial.util.HibernateUtil;
 
-public class EagerLoadingDemo {
+public class FetchJoinDemo {
 	public static void main(String[] args) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 

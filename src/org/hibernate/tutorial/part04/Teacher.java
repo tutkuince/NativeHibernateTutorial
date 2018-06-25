@@ -30,7 +30,7 @@ public class Teacher {
 	@Column(name = "email")
 	private String email;
 
-	@OneToMany(mappedBy = "teacher", fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.MERGE,
+	@OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE,
 			CascadeType.PERSIST, CascadeType.PERSIST, CascadeType.REFRESH })
 	private List<Lesson> lessons;
 
