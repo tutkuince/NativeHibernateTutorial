@@ -9,11 +9,13 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
-import org.hibernate.tutorial.part03.onetomany.Course;
+//import org.hibernate.tutorial.part03.onetomany.Course;
 //import org.hibernate.tutorial.part02.Student;
 //import org.hibernate.tutorial.part03.onetoone.Instructor;
-import org.hibernate.tutorial.part03.onetomany.Instructor;
+//import org.hibernate.tutorial.part03.onetomany.Instructor;
 //import org.hibernate.tutorial.part03.onetoone.InstructorDetail;
+import org.hibernate.tutorial.part04.Lesson;
+import org.hibernate.tutorial.part04.Teacher;
 
 public class HibernateUtil {
 	private static StandardServiceRegistry registry;
@@ -48,8 +50,9 @@ public class HibernateUtil {
 			registry = registryBuilder.build();
 
 			// Create MetadataSources
-			MetadataSources metadataSources = new MetadataSources(registry).addAnnotatedClass(Instructor.class)
-					.addAnnotatedClass(Course.class);
+			MetadataSources metadataSources = new MetadataSources(registry).addAnnotatedClass(Lesson.class)
+					.addAnnotatedClass(Teacher.class);
+
 			// Create MetaData
 			Metadata metaData = metadataSources.buildMetadata();
 
