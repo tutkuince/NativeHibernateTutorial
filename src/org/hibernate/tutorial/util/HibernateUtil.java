@@ -16,8 +16,10 @@ import org.hibernate.cfg.Environment;
 //import org.hibernate.tutorial.part03.onetoone.InstructorDetail;
 //import org.hibernate.tutorial.part04.Lesson;
 //import org.hibernate.tutorial.part04.Teacher;
-import org.hibernate.tutorial.part05.Course;
-import org.hibernate.tutorial.part05.Review;
+//import org.hibernate.tutorial.part05.Course;
+//import org.hibernate.tutorial.part05.Review;
+import org.hibernate.tutorial.part06.Student;
+import org.hibernate.tutorial.part06.Course;
 
 public class HibernateUtil {
 	private static StandardServiceRegistry registry;
@@ -53,7 +55,7 @@ public class HibernateUtil {
 
 			// Create MetadataSources
 			MetadataSources metadataSources = new MetadataSources(registry).addAnnotatedClass(Course.class)
-					.addAnnotatedClass(Review.class);
+					.addAnnotatedClass(Student.class);
 
 			// Create MetaData
 			Metadata metaData = metadataSources.buildMetadata();
