@@ -62,11 +62,10 @@ public class Course {
 	}
 
 	public void addReview(Review review) {
-		if (reviews == null) {
+		if(reviews == null)
 			reviews = new ArrayList<>();
-		}
+		
 		reviews.add(review);
-		review.setCourse(this);
 	}
 
 	@Override

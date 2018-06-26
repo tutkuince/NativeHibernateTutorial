@@ -18,8 +18,6 @@ public class Review {
 	@Column(name = "comment")
 	private String comment;
 
-	private Course course;
-
 	public Review() {
 		// TODO Auto-generated constructor stub
 	}
@@ -43,14 +41,6 @@ public class Review {
 
 	public void setComment(String comment) {
 		this.comment = comment;
-	}
-
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
 	}
 
 	@Override
